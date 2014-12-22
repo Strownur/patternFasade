@@ -18,17 +18,7 @@ public:
 			return 1;
 		return 0;
 	}
-private:
-	enum States
-	{
-		Received, DenyAllKnowledge, ReferClientToFacilities,
-		FacilitiesHasNotSentPaperwork, ElectricianIsNotDone,
-		ElectricianDidItWrong, DispatchTechnician, SignedOff, DoesNotWork,
-		FixElectriciansWiring, Complete
-	};
-	int _state;
-};
-
+	
 class ElectricianUnion
 {
 public:
@@ -43,16 +33,7 @@ public:
 			return 1;
 		return 0;
 	}
-private:
-	enum States
-	{
-		Received, RejectTheForm, SizeTheJob, SmokeAndJokeBreak,
-		WaitForAuthorization, DoTheWrongJob, BlameTheEngineer, WaitToPunchOut,
-		DoHalfAJob, ComplainToEngineer, GetClarification, CompleteTheJob,
-		TurnInThePaperwork, Complete
-	};
-	int _state;
-};
+
 
 class FacilitiesDepartment
 {
@@ -68,16 +49,7 @@ public:
 			return 1;
 		return 0;
 	}
-private:
-	enum States
-	{
-		Received, AssignToEngineer, EngineerResearches, RequestIsNotPossible,
-		EngineerLeavesCompany, AssignToNewEngineer, NewEngineerResearches,
-		ReassignEngineer, EngineerReturns, EngineerResearchesAgain,
-		EngineerFillsOutPaperWork, Complete
-	};
-	int _state;
-};
+
 
 class FacilitiesFacade
 {
@@ -138,17 +110,7 @@ public:
 	{
 		return _count;
 	}
-private:
-	enum States
-	{
-		Received, SubmitToEngineer, SubmitToElectrician, SubmitToTechnician
-	};
-	int _state;
-	int _count;
-	FacilitiesDepartment _engineer;
-	ElectricianUnion _electrician;
-	MisDepartment _technician;
-};
+
 
 int main()
 {
